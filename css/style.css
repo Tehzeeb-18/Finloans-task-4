@@ -392,18 +392,18 @@ body {
     color: #d0f7ff; 
     line-height: 1.8;
 }
-
 .apply_btn {
     text-align: center; 
     margin-top: 20px; 
 }
 
+/* Default styles for .boxed-btn3 */
 .boxed-btn3 {
     background-color: #00c0ff; 
     color: #fff; 
     border: 2px solid transparent; 
     border-radius: 5px; 
-    padding: 10px 30px;
+    padding: 10px 30px; 
     cursor: pointer; 
     font-weight: bold; 
     transition: background-color 0.3s, color 0.3s, border 0.3s; 
@@ -414,6 +414,31 @@ body {
     color: #00c0ff; 
     border: 2px solid #00c0ff; 
 }
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .apply_btn {
+        margin-top: 15px; 
+    }
+    
+    .boxed-btn3 {
+        padding: 8px 20px; 
+        font-size: 14px; 
+    }
+}
+
+/* Responsive styles for larger screens */
+@media (min-width: 1200px) {
+    .apply_btn {
+        margin-top: 30px; 
+    }
+
+    .boxed-btn3 {
+        padding: 12px 40px; 
+        font-size: 18px; 
+    }
+}
+
 .why-choose-us {
     padding: 50px 0;
     display: flex;
