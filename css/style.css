@@ -148,12 +148,17 @@ body {
 .Appointment {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensures proper spacing */
     gap: 20px;
+    flex-wrap: wrap; /* Ensures items wrap on smaller screens */
+    width: 100%; /* Ensures it occupies the full width */
 }
 
+/* Phone Number Styling */
 .phone_num {
     display: inline-flex;
     align-items: center;
+    flex-wrap: wrap; /* Ensures text wraps gracefully on smaller screens */
 }
 
 .phone_num a {
@@ -163,6 +168,7 @@ body {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
+    margin: 5px 0; /* Adds spacing for wrapping */
 }
 
 .phone_num a i {
@@ -170,7 +176,7 @@ body {
 }
 
 .phone_num a:hover {
-    color: #fff;
+    color: #1ab2a8;
     transition: color 0.3s ease;
 }
 
@@ -178,7 +184,7 @@ body {
 .boxed-btn4 {
     background-color: transparent;
     color: #1ab2a8;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 14px;
@@ -195,14 +201,16 @@ body {
     border: 2px solid #1ab2a8;
 }
 
-/* Smaller Screens (up to 991px) */
+/* Medium Screens (up to 991px) */
 @media (max-width: 991px) {
     .Appointment {
-        flex-direction: row;
+        justify-content: center; /* Centers content */
+        flex-direction: row; /* Items in a row */
     }
 
     .phone_num {
-        margin-right: 10px;
+        margin: 0 10px; /* Adjusts spacing */
+        flex-direction: row; /* Ensures horizontal alignment */
     }
 
     .boxed-btn4 {
@@ -211,23 +219,45 @@ body {
     }
 }
 
+/* Small Screens (up to 768px) */
+@media (max-width: 768px) {
+    .Appointment {
+        flex-direction: column; /* Stacks content vertically */
+        gap: 15px;
+        align-items: center; /* Centers items */
+    }
+
+    .phone_num {
+        margin: 0 0 10px; /* Adds margin for spacing */
+        text-align: center; /* Aligns content */
+    }
+
+    .boxed-btn4 {
+        padding: 8px 16px;
+        font-size: 12px;
+        width: 100%; /* Full width button for small screens */
+    }
+}
+
 /* Extra Small Screens (up to 576px) */
 @media (max-width: 576px) {
     .navbar .navbar-nav .nav-link {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .navbar .navbar-nav {
-        flex-direction: column;
+        flex-direction: column; /* Stacks navigation vertically */
+    }
+
+    .phone_num a {
+        font-size: 10px; /* Adjust font size */
+        flex-wrap: wrap; /* Ensures wrapping */
     }
 
     .boxed-btn4 {
         padding: 6px 12px;
         font-size: 12px;
-    }
-
-    .phone_num a {
-        font-size: 10px;
+        text-align: center; /* Centers text */
     }
 }
 
