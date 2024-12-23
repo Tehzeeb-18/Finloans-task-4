@@ -270,6 +270,7 @@ body {
     width: 100vw;
     display: flex;
     align-items: center;
+    justify-content: center; /* Centers content horizontally */
     color: #fff;
     position: relative;
     padding: 0 15px;
@@ -284,21 +285,44 @@ body {
 }
 
 .slider_text .boxed-btn3 {
-    background-color: #1ab2a8; 
-    color: #fff; 
+    background-color: #1ab2a8;
+    color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 1em;
     font-weight: bold;
-    border: 2px solid transparent; 
-    transition: background-color 0.3s, color 0.3s, border 0.3s; 
+    border: 2px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 .slider_text .boxed-btn3:hover {
-    background-color: transparent; 
-    color: #1ab2a8; 
-    border: 2px solid #1ab2a8; 
+    background-color: transparent;
+    color: #1ab2a8;
+    border: 2px solid #1ab2a8;
+}
+
+/* Responsive Adjustments for Slider Area */
+@media (max-width: 768px) {
+    .slider_text h3 {
+        font-size: 2em;
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider_text h3 {
+        font-size: 1.5em;
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
 }
 
 /* Loan Calculator */
@@ -307,7 +331,9 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
+    max-width: 500px;
+    width: 100%; /* Ensures full width for small screens */
+    margin: 0 auto; /* Centers the form */
     text-align: center;
 }
 
@@ -336,73 +362,144 @@ body {
 
 .payment_form .submit_btn .boxed-btn3 {
     background-color: #1ab2a8;
-    color: #fff; 
+    color: #fff;
     cursor: pointer;
-    border: 2px solid transparent; 
-    border-radius: 5px; 
+    border: 2px solid transparent;
+    border-radius: 5px;
     padding: 10px 20px;
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s, border 0.3s; 
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
 .payment_form .submit_btn .boxed-btn3:hover {
-    background-color: transparent; 
+    background-color: transparent;
     color: #1ab2a8;
-    border: 2px solid #1ab2a8; 
+    border: 2px solid #1ab2a8;
 }
 
+/* Responsive Adjustments for Loan Calculator */
+@media (max-width: 768px) {
+    .payment_form {
+        padding: 20px;
+    }
 
-.payment_form .payment-info {
-    font-size: 1.1em;
-    color: #333;
-    font-weight: bold;
+    .payment_form h4 {
+        font-size: 1.3em;
+    }
+
+    .payment_form p {
+        font-size: 0.9em;
+    }
+
+    .payment_form .form select,
+    .payment_form .submit_btn .boxed-btn3 {
+        font-size: 0.9em;
+    }
 }
+
+@media (max-width: 576px) {
+    .payment_form h4 {
+        font-size: 1.2em;
+    }
+
+    .payment_form p {
+        font-size: 0.8em;
+    }
+}
+
+/* Single Service Section */
 .single_service {
-    width: 350px; 
-    height: 450px; 
-    border-radius: 10px; 
-    padding: 20px; 
+    width: 100%;
+    max-width: 350px;
+    height: auto; /* Adjust height dynamically */
+    border-radius: 10px;
+    padding: 20px;
     background-color: #0078d4;
-    color: #fff; 
-    text-align: center; 
-    margin: 0 auto; 
+    color: #fff;
+    text-align: center;
+    margin: 15px auto; /* Centers and adds spacing */
 }
-
 
 .service_icon_wrap {
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
     font-size: 50px;
-    color: #00c0ff; 
+    color: #00c0ff;
 }
 
 .info span {
     display: block;
-    font-size: 20px; 
-    font-weight: bold; 
-    color: #fff; 
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
 }
 
 .info h3 {
     font-size: 30px;
-    font-weight: bold; 
-    color: #00ffea; 
-    margin: 10px 0; 
+    font-weight: bold;
+    color: #00ffea;
+    margin: 10px 0;
 }
 
 .service_content ul {
-    list-style-type: none; 
-    padding: 0; 
-    margin: 15px 0; 
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 0;
 }
 
 .service_content ul li {
-    font-size: 16px; 
-    color: #d0f7ff; 
+    font-size: 16px;
+    color: #d0f7ff;
     line-height: 1.8;
 }
+
 .apply_btn {
-    text-align: center; 
-    margin-top: 20px; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments for Single Service */
+@media (max-width: 768px) {
+    .single_service {
+        padding: 15px;
+    }
+
+    .service_icon_wrap {
+        font-size: 40px;
+    }
+
+    .info span {
+        font-size: 18px;
+    }
+
+    .info h3 {
+        font-size: 25px;
+    }
+
+    .service_content ul li {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .single_service {
+        padding: 10px;
+    }
+
+    .service_icon_wrap {
+        font-size: 30px;
+    }
+
+    .info span {
+        font-size: 16px;
+    }
+
+    .info h3 {
+        font-size: 20px;
+    }
+
+    .service_content ul li {
+        font-size: 12px;
+    }
 }
 
 /* Default styles for .boxed-btn3 */
