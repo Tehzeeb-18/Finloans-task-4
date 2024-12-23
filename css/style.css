@@ -10,11 +10,7 @@ body {
 }
 
 /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* Header Styling */
 .header-area {
@@ -23,25 +19,13 @@ body {
     padding: 0;
     position: fixed;
     z-index: 10;
-    width: 100%; /* Adjusted to 100% to ensure it doesn't exceed the viewport width */
-    box-sizing: border-box;
+    width: 100vw; /* Ensure full viewport width */
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
-}
-
-/* Container Adjustment */
-.container-fluid {
-    max-width: 100%; /* Ensure it never exceeds viewport width */
-    padding: 0 20px; /* Adjust side padding for better spacing */
-}
-
-/* Header Bottom Border */
-.header_bottom_border {
-    padding: 15px 0;
-    box-sizing: border-box;
-    width: 100%;
+    justify-content: space-between; /* Adjust alignment */
+    align-items: center;
+    height: 70px; /* Adjust header height as needed */
 }
 
 /* Navbar Container */
@@ -49,49 +33,50 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Keep navbar within the header */
     padding: 0;
-    width: 100%; /* Ensure navbar spans 100% of the header */
 }
 
 .navbar-nav {
+    display: flex;
     flex-direction: row;
     justify-content: center;
-}
-
-.navbar .nav-item {
-    margin-left: 15px;
-}
-
-.main-header-area {
-    width: 100%;
+    align-items: center;
+    list-style: none;
 }
 
 /* Navbar Links Styling */
-.navbar .nav-link {
+.nav-link {
     color: #fff;
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
-    white-space: nowrap; /* Prevent text from wrapping */
+    margin: 0 15px; /* Adjust spacing between links */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-.navbar .nav-link:hover {
+.nav-link:hover {
     color: #1ab2a8;
     transition: color 0.3s ease;
 }
 
-/* Dropdown Menu Links Styling */
-.dropdown-item {
-    color: #333;
-    padding: 10px 20px;
-    font-size: 15px;
+/* Call-to-Action Button */
+.call-to-action {
+    background-color: transparent;
+    border: 2px solid #1ab2a8;
+    color: #1ab2a8;
+    padding: 8px 15px;
+    font-size: 14px;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: auto;
 }
 
-.dropdown-item:hover {
+.call-to-action:hover {
     background-color: #1ab2a8;
     color: #fff;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
 }
 
 /* Mobile Menu Overlay */
@@ -138,43 +123,26 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: rgba(0, 0, 0, 0.9);
-        width: 100%;
+    .header-area {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
     }
 
     .nav-link {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 10px 0;
     }
 
-    .navbar .nav-item {
-        margin-left: 0;
-    }
-
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
+    .call-to-action {
+        margin: 15px 0;
     }
 }
-
-@media (min-width: 992px) {
-    .main-header-area {
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    }
-}
-
-
 
 /* Appointment Section */
 .Appointment {
