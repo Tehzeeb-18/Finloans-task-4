@@ -15,18 +15,18 @@ body {
     color: #fff;
     padding: 0;
     position: fixed;
-    z-index: 1000;
-    width: 100%;
+    z-index: 10;
+    max-width: 100vw; 
     box-sizing: border-box;
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
 }
 
 .container-fluid {
-    width: 100%;
-    padding: 0 20px;
+    width: 100vw;
+    padding: 0 20px; 
     box-sizing: border-box;
 }
 
@@ -38,7 +38,7 @@ body {
 /* Navbar Container */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0;
     width: 100%;
@@ -47,15 +47,14 @@ body {
 .navbar-nav {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .navbar .nav-item {
-    margin: 0 10px;
+    margin-left: 15px;
 }
 
 .main-header-area {
-    width: 100%;
+    width: 100vw;
 }
 
 /* Navbar Links Styling */
@@ -64,11 +63,11 @@ body {
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .navbar .navbar-nav .nav-link:hover {
     color: #1ab2a8;
+    transition: color 0.3s ease;
 }
 
 /* Dropdown Menu Links Styling */
@@ -76,11 +75,13 @@ body {
     color: #333;
     padding: 10px 20px;
     font-size: 15px;
+    text-decoration: none;
 }
 
 .dropdown-item:hover {
     background-color: #1ab2a8;
     color: #fff;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Navbar Background for Large Screens */
@@ -96,12 +97,18 @@ body {
         background-color: rgba(0, 0, 0, 0.9);
     }
 
+    .navbar {
+        background: rgba(0, 0, 0, 0.9);
+    }
+
     .navbar-collapse {
         background: rgba(0, 0, 0, 0.9);
         text-align: center;
     }
 
     .navbar-nav {
+        margin: 0 auto;
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -116,20 +123,23 @@ body {
     }
 }
 
+
 /* Mobile Menu Overlay */
 #mobileMenu {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    text-align: center;
+    overflow: hidden;
 }
 
 #mobileMenu.active {
@@ -149,12 +159,13 @@ body {
 #mobileMenu ul li a {
     color: #fff;
     font-size: 24px;
-    font-weight: bold;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #mobileMenu ul li a:hover {
     color: #1ab2a8;
+    transition: color 0.3s ease;
 }
 
 .navbar-close {
@@ -173,6 +184,11 @@ body {
     gap: 20px;
 }
 
+.phone_num {
+    display: inline-flex;
+    align-items: center;
+}
+
 .phone_num a {
     color: #fff;
     font-weight: bold;
@@ -182,8 +198,13 @@ body {
     align-items: center;
 }
 
+.phone_num a i {
+    margin-right: 5px;
+}
+
 .phone_num a:hover {
-    color: #1ab2a8;
+    color: #fff;
+    transition: color 0.3s ease;
 }
 
 /* Apply for a Loan Button */
@@ -192,30 +213,29 @@ body {
     color: #1ab2a8;
     padding: 8px 16px;
     border-radius: 5px;
+    font-weight: bold;
     font-size: 14px;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
     border: 2px solid #1ab2a8;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s, border 0.3s ease;
 }
 
 .boxed-btn4:hover {
     background-color: #1ab2a8;
     color: #fff;
+    border: 2px solid #1ab2a8;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .slider_area {
-        height: 80vh;
-    }
-
-    .slider_text h3 {
-        font-size: 1.8em;
-    }
-}
-
+/* Smaller Screens (up to 576px) */
 @media (max-width: 576px) {
-    .navbar-nav .nav-link {
+    .navbar .navbar-nav .nav-link {
         font-size: 14px;
+    }
+
+    .navbar .navbar-nav {
+        flex-direction: column;
     }
 
     .boxed-btn4 {
@@ -227,10 +247,108 @@ body {
         font-size: 10px;
     }
 }
-/* Hide Logo in Mobile Navbar Menu Collapse */
-@media (max-width: 991px) {
-    .navbar-brand {
-        display: none !important;
+
+
+/* Slider Area - Hero Section */
+.slider_area {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url("../img/banner/banner.png") no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Full viewport height */
+    width: 100%; /* Full viewport width */
+    display: flex;
+    flex-direction: column; /* Allows stacking of elements vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    color: #fff;
+    position: relative;
+    padding: 0 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Text Styling */
+.slider_text h3 {
+    font-size: 2.5em; /* Default for larger screens */
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.slider_text .boxed-btn3 {
+    background-color: #1ab2a8;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid transparent;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.slider_text .boxed-btn3:hover {
+    background-color: transparent;
+    color: #1ab2a8;
+    border: 2px solid #1ab2a8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .slider_text h3 {
+        font-size: 2.2em; /* Slightly smaller on large tablets or desktops */
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 992px) {
+    .slider_area {
+        padding: 0 10px; /* Reduce side padding for smaller screens */
+    }
+
+    .slider_text h3 {
+        font-size: 2em; /* Adjust heading size for tablets */
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.85em;
+        padding: 8px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider_area {
+        height: 80vh; /* Reduce height on smaller screens */
+    }
+
+    .slider_text h3 {
+        font-size: 1.8em; /* Adjust heading size for mobile screens */
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider_area {
+        padding: 0 5px; /* Further reduce padding on extra-small screens */
+        text-align: center;
+    }
+
+    .slider_text h3 {
+        font-size: 1.5em; /* Further reduce heading size for extra-small screens */
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.75em;
+        padding: 6px 10px;
     }
 }
 
