@@ -1,4 +1,4 @@
-/* General Reset */
+* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +9,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/* General Reset */
-
-
 /* Header Styling */
 .header-area {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
@@ -19,13 +16,23 @@ body {
     padding: 0;
     position: fixed;
     z-index: 10;
-    width: 100vw; /* Ensure full viewport width */
+    width: 100vw; 
+    box-sizing: border-box;
     top: 0;
     left: 0;
     display: flex;
-    justify-content: space-between; /* Adjust alignment */
-    align-items: center;
-    height: 70px; /* Adjust header height as needed */
+    justify-content: center; 
+}
+
+.container-fluid {
+    width: 100%;
+    padding: 0 20px; 
+    box-sizing: border-box;
+}
+
+.header_bottom_border {
+    padding: 15px 0;
+    box-sizing: border-box;
 }
 
 /* Navbar Container */
@@ -33,53 +40,80 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Keep navbar within the header */
     padding: 0;
+    width: 100%;
 }
 
 .navbar-nav {
-    display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    list-style: none;
 }
 
+.navbar .nav-item {
+    margin-left: 15px; 
+}
+.main-header-area {
+    width: 100%; 
+}
+
+/* Navbar Background for Smaller Screens */
+@media (max-width: 991px) {
+    .navbar {
+        background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); 
+    }
+
+    .navbar-collapse {
+        background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); 
+     
+    }
+
+    .nav-link {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    }
+}
 /* Navbar Links Styling */
-.nav-link {
-    color: #fff;
+.navbar navbar-nav ms-auto .nav-link {
+    color: #fff; 
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
-    margin: 0 15px; /* Adjust spacing between links */
-    white-space: nowrap; /* Prevent text wrapping */
 }
 
-.nav-link:hover {
-    color: #1ab2a8;
-    transition: color 0.3s ease;
+.navbar .navbar-nav .nav-link:hover {
+    color: #1ab2a8; 
+    transition: color 0.3s ease; 
 }
 
-/* Call-to-Action Button */
-.call-to-action {
-    background-color: transparent;
-    border: 2px solid #1ab2a8;
-    color: #1ab2a8;
-    padding: 8px 15px;
-    font-size: 14px;
+/* Dropdown Menu Links Styling */
+.dropdown-item {
+    color: #333; 
+    padding: 10px 20px;
+    font-size: 15px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-left: auto;
 }
 
-.call-to-action:hover {
+.dropdown-item:hover {
     background-color: #1ab2a8;
-    color: #fff;
-    transition: all 0.3s ease;
+    color: #fff; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Navbar Background for Large Screens */
+@media (min-width: 992px) {
+    .main-header-area {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    }
+}
+
+/* Navbar Background for Mobile Screens */
+@media (max-width: 991px) {
+    .main-header-area {
+        background-color: rgba(0, 0, 0, 0.9);
+    }
 }
 
 /* Mobile Menu Overlay */
+
 #mobileMenu {
     display: none;
     position: fixed;
@@ -112,53 +146,35 @@ body {
 }
 
 #mobileMenu ul li a {
-    color: #fff;
+    color: #fff; 
     font-size: 24px;
     text-decoration: none;
     font-weight: bold;
 }
 
 #mobileMenu ul li a:hover {
-    color: #1ab2a8;
+    color: #1ab2a8; 
     transition: color 0.3s ease;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-    .header-area {
-        flex-direction: column;
-        height: auto;
-        padding: 10px;
-    }
-
-    .navbar {
-        flex-direction: column;
-    }
-
-    .nav-link {
-        margin: 10px 0;
-    }
-
-    .call-to-action {
-        margin: 15px 0;
-    }
+.navbar-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
 }
-
 /* Appointment Section */
 .Appointment {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures proper spacing */
     gap: 20px;
-    flex-wrap: wrap; /* Ensures items wrap on smaller screens */
-    width: 100%; /* Ensures it occupies the full width */
 }
 
-/* Phone Number Styling */
 .phone_num {
     display: inline-flex;
     align-items: center;
-    flex-wrap: wrap; /* Ensures text wraps gracefully on smaller screens */
 }
 
 .phone_num a {
@@ -168,7 +184,6 @@ body {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    margin: 5px 0; /* Adds spacing for wrapping */
 }
 
 .phone_num a i {
@@ -176,7 +191,7 @@ body {
 }
 
 .phone_num a:hover {
-    color: #1ab2a8;
+    color: #fff;
     transition: color 0.3s ease;
 }
 
@@ -184,7 +199,7 @@ body {
 .boxed-btn4 {
     background-color: transparent;
     color: #1ab2a8;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 5px;
     font-weight: bold;
     font-size: 14px;
@@ -201,16 +216,14 @@ body {
     border: 2px solid #1ab2a8;
 }
 
-/* Medium Screens (up to 991px) */
+/* Smaller Screens (up to 991px) */
 @media (max-width: 991px) {
     .Appointment {
-        justify-content: center; /* Centers content */
-        flex-direction: row; /* Items in a row */
+        flex-direction: row;
     }
 
     .phone_num {
-        margin: 0 10px; /* Adjusts spacing */
-        flex-direction: row; /* Ensures horizontal alignment */
+        margin-right: 10px;
     }
 
     .boxed-btn4 {
@@ -219,69 +232,51 @@ body {
     }
 }
 
-/* Small Screens (up to 768px) */
-@media (max-width: 768px) {
-    .Appointment {
-        flex-direction: column; /* Stacks content vertically */
-        gap: 15px;
-        align-items: center; /* Centers items */
-    }
-
-    .phone_num {
-        margin: 0 0 10px; /* Adds margin for spacing */
-        text-align: center; /* Aligns content */
-    }
-
-    .boxed-btn4 {
-        padding: 8px 16px;
-        font-size: 12px;
-        width: 100%; /* Full width button for small screens */
-    }
-}
-
 /* Extra Small Screens (up to 576px) */
 @media (max-width: 576px) {
     .navbar .navbar-nav .nav-link {
-        font-size: 12px;
+        font-size: 14px;
     }
 
     .navbar .navbar-nav {
-        flex-direction: column; /* Stacks navigation vertically */
-    }
-
-    .phone_num a {
-        font-size: 10px; /* Adjust font size */
-        flex-wrap: wrap; /* Ensures wrapping */
+        flex-direction: column;
     }
 
     .boxed-btn4 {
         padding: 6px 12px;
         font-size: 12px;
-        text-align: center; /* Centers text */
+    }
+
+    .phone_num a {
+        font-size: 10px;
     }
 }
 
-
 /* Slider Area - Hero Section */
 .slider_area {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/banner/banner.png") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+        url("../img/banner/banner.png") no-repeat center center;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
     display: flex;
-    align-items: center;
-    justify-content: center; /* Centers content horizontally */
+    flex-direction: column; /* Allows stacking of elements vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
     color: #fff;
     position: relative;
     padding: 0 15px;
     text-align: center;
+    box-sizing: border-box;
 }
 
+/* Text Styling */
 .slider_text h3 {
-    font-size: 2.5em;
+    font-size: 2.5em; /* Default for larger screens */
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .slider_text .boxed-btn3 {
@@ -302,10 +297,10 @@ body {
     border: 2px solid #1ab2a8;
 }
 
-/* Responsive Adjustments for Slider Area */
-@media (max-width: 768px) {
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
     .slider_text h3 {
-        font-size: 2em;
+        font-size: 2.2em; /* Slightly smaller on large tablets or desktops */
     }
 
     .slider_text .boxed-btn3 {
@@ -314,14 +309,49 @@ body {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
+    .slider_area {
+        padding: 0 10px; /* Reduce side padding for smaller screens */
+    }
+
     .slider_text h3 {
-        font-size: 1.5em;
+        font-size: 2em; /* Adjust heading size for tablets */
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.85em;
+        padding: 8px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider_area {
+        height: 80vh; /* Reduce height on smaller screens */
+    }
+
+    .slider_text h3 {
+        font-size: 1.8em; /* Adjust heading size for mobile screens */
     }
 
     .slider_text .boxed-btn3 {
         font-size: 0.8em;
         padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .slider_area {
+        padding: 0 5px; /* Further reduce padding on extra-small screens */
+        text-align: center;
+    }
+
+    .slider_text h3 {
+        font-size: 1.5em; /* Further reduce heading size for extra-small screens */
+    }
+
+    .slider_text .boxed-btn3 {
+        font-size: 0.75em;
+        padding: 6px 10px;
     }
 }
 
@@ -331,9 +361,7 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%; /* Ensures full width for small screens */
-    margin: 0 auto; /* Centers the form */
+    max-width: 100%;
     text-align: center;
 }
 
@@ -362,153 +390,82 @@ body {
 
 .payment_form .submit_btn .boxed-btn3 {
     background-color: #1ab2a8;
-    color: #fff;
+    color: #fff; 
     cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 5px;
+    border: 2px solid transparent; 
+    border-radius: 5px; 
     padding: 10px 20px;
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; 
 }
 
 .payment_form .submit_btn .boxed-btn3:hover {
-    background-color: transparent;
+    background-color: transparent; 
     color: #1ab2a8;
-    border: 2px solid #1ab2a8;
+    border: 2px solid #1ab2a8; 
 }
 
-/* Responsive Adjustments for Loan Calculator */
-@media (max-width: 768px) {
-    .payment_form {
-        padding: 20px;
-    }
 
-    .payment_form h4 {
-        font-size: 1.3em;
-    }
-
-    .payment_form p {
-        font-size: 0.9em;
-    }
-
-    .payment_form .form select,
-    .payment_form .submit_btn .boxed-btn3 {
-        font-size: 0.9em;
-    }
+.payment_form .payment-info {
+    font-size: 1.1em;
+    color: #333;
+    font-weight: bold;
 }
-
-@media (max-width: 576px) {
-    .payment_form h4 {
-        font-size: 1.2em;
-    }
-
-    .payment_form p {
-        font-size: 0.8em;
-    }
-}
-
-/* Single Service Section */
 .single_service {
-    width: 100%;
-    max-width: 350px;
-    height: auto; /* Adjust height dynamically */
-    border-radius: 10px;
-    padding: 20px;
+    width: 350px; 
+    height: 450px; 
+    border-radius: 10px; 
+    padding: 20px; 
     background-color: #0078d4;
-    color: #fff;
-    text-align: center;
-    margin: 15px auto; /* Centers and adds spacing */
+    color: #fff; 
+    text-align: center; 
+    margin: 0 auto; 
 }
+
 
 .service_icon_wrap {
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
     font-size: 50px;
-    color: #00c0ff;
+    color: #00c0ff; 
 }
 
 .info span {
     display: block;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
+    font-size: 20px; 
+    font-weight: bold; 
+    color: #fff; 
 }
 
 .info h3 {
     font-size: 30px;
-    font-weight: bold;
-    color: #00ffea;
-    margin: 10px 0;
+    font-weight: bold; 
+    color: #00ffea; 
+    margin: 10px 0; 
 }
 
 .service_content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 15px 0;
+    list-style-type: none; 
+    padding: 0; 
+    margin: 15px 0; 
 }
 
 .service_content ul li {
-    font-size: 16px;
-    color: #d0f7ff;
+    font-size: 16px; 
+    color: #d0f7ff; 
     line-height: 1.8;
 }
 
 .apply_btn {
-    text-align: center;
-    margin-top: 20px;
+    text-align: center; 
+    margin-top: 20px; 
 }
 
-/* Responsive Adjustments for Single Service */
-@media (max-width: 768px) {
-    .single_service {
-        padding: 15px;
-    }
-
-    .service_icon_wrap {
-        font-size: 40px;
-    }
-
-    .info span {
-        font-size: 18px;
-    }
-
-    .info h3 {
-        font-size: 25px;
-    }
-
-    .service_content ul li {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 576px) {
-    .single_service {
-        padding: 10px;
-    }
-
-    .service_icon_wrap {
-        font-size: 30px;
-    }
-
-    .info span {
-        font-size: 16px;
-    }
-
-    .info h3 {
-        font-size: 20px;
-    }
-
-    .service_content ul li {
-        font-size: 12px;
-    }
-}
-
-/* Default styles for .boxed-btn3 */
 .boxed-btn3 {
     background-color: #00c0ff; 
     color: #fff; 
     border: 2px solid transparent; 
     border-radius: 5px; 
-    padding: 10px 30px; 
+    padding: 10px 30px;
     cursor: pointer; 
     font-weight: bold; 
     transition: background-color 0.3s, color 0.3s, border 0.3s; 
@@ -519,31 +476,6 @@ body {
     color: #00c0ff; 
     border: 2px solid #00c0ff; 
 }
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-    .apply_btn {
-        margin-top: 15px; 
-    }
-    
-    .boxed-btn3 {
-        padding: 8px 20px; 
-        font-size: 14px; 
-    }
-}
-
-/* Responsive styles for larger screens */
-@media (min-width: 1200px) {
-    .apply_btn {
-        margin-top: 30px; 
-    }
-
-    .boxed-btn3 {
-        padding: 12px 40px; 
-        font-size: 18px; 
-    }
-}
-
 .why-choose-us {
     padding: 50px 0;
     display: flex;
@@ -593,6 +525,7 @@ body {
 .how-it-works {
     background-color: #f4f8fc; 
     min-height: 100vh; 
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -646,7 +579,7 @@ body {
 
 .faq-content {
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: #ffffff;
 }
@@ -957,7 +890,7 @@ body {
 @media (max-width: 768px) {
     .service_area .row > div {
         flex-basis: 100%;
-        max-width: 100%;
+        max-width: 100vw;
     }
 
     .service_content ul li {
@@ -973,7 +906,7 @@ body {
     }
 
     .why-choose-us img {
-        max-width: 100%;
+        max-width: 100vw;
     }
 
     .why-choose-us-content h2 {
@@ -1167,7 +1100,7 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .testimonial-content {
-        max-width: 100%;
+        max-width: 100vw;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -1193,7 +1126,8 @@ body {
 /* Hero Section Container */
 .loan-hero {
     position: relative;
-    background-image: url("../img/banner/loan.png"); 
+    background-image: url("../img/banner/loan.png");
+    width: 100vw; 
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -1257,7 +1191,7 @@ body {
     .loan-apply-btn {
         position: static; 
         transform: none; 
-        width: 100%; 
+        width: 100vw; 
         margin-top: 20px; 
         text-align: center; 
     }
